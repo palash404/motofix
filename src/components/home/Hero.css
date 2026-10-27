@@ -1,0 +1,274 @@
+
+/* ============================================================
+   MotoFix – Hero Section
+   ============================================================ */
+
+.hero {
+  flex: 1;
+  width: 100%;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: clamp(42px, 7.5vh, 72px);
+  padding-left: clamp(30px, 3.4vw, 62px);
+  padding-right: 24px;
+  padding-bottom: 32px;
+  background: linear-gradient(
+    120deg,
+    #586a9a 0%,
+    #9ba7c3 34%,
+    #deddd6 69%,
+    #fff9e6 100%
+  );
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Text container */
+.hero__content {
+  width: 53%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main heading */
+.hero__heading {
+  font-size: clamp(42px, 5.4vw, 70px);
+  font-weight: 750;
+  line-height: 0.99;
+  letter-spacing: -0.035em;
+  margin: 0 0 14px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(20, 30, 60, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__heading-line {
+  display: block;
+  color: #fff;
+}
+
+/* Supporting text */
+.hero__description {
+  font-size: clamp(14px, 1.25vw, 19px);
+  color: #111111;
+  line-height: 1.4;
+  max-width: 520px;
+  margin: 0 0 22px;
+  font-weight: 500;
+}
+
+.hero__desc-br {
+  display: inline;
+}
+
+/* Buttons */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero__btn {
+  width: 186px;
+  min-height: 46px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.015em;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1.2;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.hero__btn--primary {
+  background: var(--color-primary);
+  color: #000;
+  border: 2px solid var(--color-primary);
+  transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.hero__btn--primary:hover {
+  background: var(--color-primary);
+  color: #000;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 14px rgba(245, 194, 0, 0.4);
+}
+
+.hero__btn--secondary {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.hero__btn--secondary:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* Engine illustration — bring it closer to the text */
+.hero__illustration-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 42%;
+  right: -3%;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__engine-img {
+  display: block;
+  width: min(100%, 680px);
+  height: auto;
+  max-height: 88%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  filter: contrast(1.2) brightness(0.96);
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .hero {
+    padding-top: clamp(36px, 6vh, 52px);
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+    padding-bottom: 32px;
+  }
+
+  .hero__content {
+    width: 56%;
+  }
+
+  .hero__heading {
+    font-size: clamp(36px, 5.8vw, 54px);
+    margin-bottom: 14px;
+  }
+
+  .hero__description {
+    font-size: clamp(14px, 1.7vw, 17px);
+    max-width: 390px;
+    margin-bottom: 20px;
+  }
+
+  .hero__illustration-wrapper {
+    left: 40%;
+    right: -10%;
+  }
+
+  .hero__engine-img {
+    max-height: 82%;
+  }
+
+  .hero__btn {
+    width: auto;
+    min-width: 145px;
+    min-height: 42px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero {
+    min-height: calc(100svh - var(--navbar-height));
+    padding: 36px var(--space-4) 28px;
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .hero__heading {
+    font-size: clamp(36px, 9vw, 48px);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .hero__description {
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 310px;
+    margin-bottom: 20px;
+  }
+
+  .hero__desc-br {
+    display: none;
+  }
+
+  .hero__actions {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero__btn {
+    width: auto;
+    min-width: 0;
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 10px;
+  }
+
+  .hero__illustration-wrapper {
+    top: 170px;
+    bottom: 0;
+    left: 34%;
+    right: -30%;
+    align-items: center;
+    opacity: 0.25;
+  }
+
+  .hero__engine-img {
+    width: 300px;
+    max-height: 80%;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero__heading {
+    font-size: 34px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__btn {
+    min-width: 165px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__btn {
+    transition: none;
+  }
+}

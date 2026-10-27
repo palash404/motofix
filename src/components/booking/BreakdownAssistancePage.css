@@ -1,0 +1,216 @@
+/* ============================================================
+   MotoFix – Breakdown Assistance Booking Page Styles
+   ============================================================ */
+
+.breakdown-page {
+  flex: 1;
+  width: 100%;
+  background: linear-gradient(135deg, #556897 0%, #9BA7C3 32%, #E1DFD6 68%, #F7F3E7 100%);
+  box-sizing: border-box;
+}
+
+.breakdown-container {
+  background-color: #FAF6EC;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+  padding: 48px 44px 64px;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  box-sizing: border-box;
+}
+
+/* Page Heading */
+.breakdown-heading {
+  font-size: clamp(38px, 4.8vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: #1C1C1E;
+  margin-bottom: 18px;
+}
+
+/* Page Description */
+.breakdown-description {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #292929;
+  max-width: 760px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* Form Card (Light Neutral Grey Variant) */
+.breakdown-card {
+  position: relative;
+  background-color: #DCDAD0;
+  border-radius: 20px;
+  padding: 36px 40px 32px;
+  max-width: 860px;
+  box-sizing: border-box;
+}
+
+/* Decorative Corner Bolts */
+.breakdown-card__bolts {
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.breakdown-card__bolt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+}
+
+/* Form Fields Layout */
+.breakdown-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.breakdown-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breakdown-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1C1C1E;
+  letter-spacing: -0.01em;
+}
+
+/* Real Inputs with Native Placeholders */
+.breakdown-input {
+  width: 100%;
+  max-width: 520px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1C1C1E;
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.breakdown-input:focus {
+  border-color: #1C1C1E;
+  box-shadow: 0 0 0 2px rgba(28, 28, 30, 0.15);
+}
+
+.breakdown-input::placeholder {
+  color: #7A7A7E;
+  opacity: 1;
+  font-size: 13.5px;
+}
+
+/* Textarea Field */
+.breakdown-textarea {
+  width: 100%;
+  max-width: 520px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1C1C1E;
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.breakdown-textarea:focus {
+  border-color: #1C1C1E;
+  box-shadow: 0 0 0 2px rgba(28, 28, 30, 0.15);
+}
+
+.breakdown-textarea::placeholder {
+  color: #7A7A7E;
+  opacity: 1;
+  font-size: 13.5px;
+}
+
+/* Error Message */
+.breakdown-error {
+  color: #B00020;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Success Message */
+.breakdown-success-message {
+  position: relative;
+  z-index: 2;
+  color: #1C1C1E;
+  padding: 24px 0;
+}
+
+.breakdown-success-message h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.breakdown-success-message p {
+  color: #292929;
+}
+
+/* Card Footer */
+.breakdown-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* Responsive Adaptations */
+@media (max-width: 640px) {
+  .breakdown-container {
+    padding: 28px 16px 36px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .breakdown-heading {
+    font-size: 32px;
+  }
+
+  .breakdown-card {
+    padding: 24px 20px 24px;
+  }
+
+  .breakdown-label {
+    font-size: 17px;
+  }
+
+  .breakdown-input,
+  .breakdown-textarea {
+    max-width: 100%;
+  }
+
+  .breakdown-card__footer {
+    justify-content: stretch;
+  }
+}

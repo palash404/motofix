@@ -1,0 +1,265 @@
+/* ============================================================
+   MotoFix – Home Bike Repair Booking Page Styles
+   ============================================================ */
+
+.repair-page {
+  flex: 1;
+  width: 100%;
+  background: linear-gradient(135deg, #556897 0%, #9BA7C3 32%, #E1DFD6 68%, #F7F3E7 100%);
+  box-sizing: border-box;
+}
+
+.repair-container {
+  background-color: #FAF6EC;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+  padding: 48px 44px 64px;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  box-sizing: border-box;
+}
+
+/* Page Heading */
+.repair-heading {
+  font-size: clamp(38px, 4.8vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: #1C1C1E;
+  margin-bottom: 18px;
+}
+
+/* Page Description */
+.repair-description {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #292929;
+  max-width: 760px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* Form Card */
+.repair-card {
+  position: relative;
+  background-color: #F4C430;
+  border-radius: 20px;
+  padding: 36px 40px 32px;
+  max-width: 860px;
+  box-sizing: border-box;
+}
+
+/* Decorative Corner Bolts */
+.repair-card__bolts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.repair-card__bolt {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+}
+
+.repair-card__bolt:nth-child(1),
+.repair-card__bolt--top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.repair-card__bolt:nth-child(2),
+.repair-card__bolt--top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.repair-card__bolt:nth-child(3),
+.repair-card__bolt--bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+.repair-card__bolt:nth-child(4),
+.repair-card__bolt--bottom-right {
+  bottom: 12px;
+  right: 12px;
+}
+
+/* Form Fields Layout */
+.repair-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.repair-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.repair-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1C1C1E;
+  letter-spacing: -0.01em;
+}
+
+/* Real Inputs with Native Placeholders */
+.repair-input {
+  width: 100%;
+  max-width: 520px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1C1C1E;
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repair-input:focus {
+  border-color: #1C1C1E;
+  box-shadow: 0 0 0 2px rgba(28, 28, 30, 0.15);
+}
+
+.repair-input::placeholder {
+  color: #7A7A7E;
+  opacity: 1;
+  font-size: 13.5px;
+}
+
+/* Textarea Field */
+.repair-textarea {
+  width: 100%;
+  max-width: 520px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1C1C1E;
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repair-textarea:focus {
+  border-color: #1C1C1E;
+  box-shadow: 0 0 0 2px rgba(28, 28, 30, 0.15);
+}
+
+.repair-textarea::placeholder {
+  color: #7A7A7E;
+  opacity: 1;
+  font-size: 13.5px;
+}
+
+/* Error Message */
+.repair-error {
+  color: #B00020;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Success Message */
+.repair-success-message {
+  position: relative;
+  z-index: 2;
+  color: #1C1C1E;
+  padding: 24px 0;
+}
+
+.repair-success-message h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.repair-success-message p {
+  color: #292929;
+}
+
+/* Card Footer & Inverting Continue Button */
+.repair-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.continue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 32px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: 2px solid #000000;
+  background-color: #000000;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.continue-button:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Responsive Adaptations */
+@media (max-width: 640px) {
+  .repair-container {
+    padding: 28px 16px 36px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .repair-heading {
+    font-size: 32px;
+  }
+
+  .repair-card {
+    padding: 24px 20px 24px;
+  }
+
+  .repair-label {
+    font-size: 17px;
+  }
+
+  .repair-input,
+  .repair-textarea {
+    max-width: 100%;
+  }
+
+  .repair-card__footer {
+    justify-content: stretch;
+  }
+
+  .continue-button {
+    width: 100%;
+  }
+}

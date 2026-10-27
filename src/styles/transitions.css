@@ -1,0 +1,85 @@
+/* ============================================================
+   MotoFix – Branded Page Transitions & Content Entrance Styles
+   ============================================================ */
+
+/* ── Content Entrance Animation (Fade + 8px Rise) ────────── */
+@keyframes pageContentEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-content-entrance {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: pageContentEntrance 240ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* ── Branded Yellow Horizontal Wipe Overlay ──────────────── */
+@keyframes wipeCover {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wipeReveal {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.page-transition-wipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Alternating diagonal black and MotoFix-yellow hazard tape pattern */
+  background: repeating-linear-gradient(
+    45deg,
+    #F5C200,
+    #F5C200 32px,
+    #0A0A0A 32px,
+    #0A0A0A 64px
+  );
+  z-index: 150;
+  pointer-events: auto;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.45);
+  will-change: transform;
+}
+
+.page-transition-wipe--covering {
+  animation: wipeCover 150ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-transition-wipe--revealing {
+  animation: wipeReveal 150ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Accessibility: prefers-reduced-motion ───────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-wipe {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .page-content-entrance {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

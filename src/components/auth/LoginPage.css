@@ -1,0 +1,196 @@
+/* ============================================================
+   MotoFix – Login Page Styles
+   Matches the reference screenshot: gradient page bg,
+   warm-cream rounded panel, blue-grey form card.
+   ============================================================ */
+
+/* Page wrapper — full viewport, same gradient as booking pages */
+.login-page {
+  flex: 1;
+  width: 100%;
+  background: linear-gradient(135deg, #556897 0%, #9BA7C3 32%, #E1DFD6 68%, #F7F3E7 100%);
+  box-sizing: border-box;
+}
+
+/* Warm-cream panel with rounded upper corners */
+.login-container {
+  background-color: #FAF6EC;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+  padding: 48px 44px 80px;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Large centered heading */
+.login-heading {
+  font-size: clamp(42px, 5.5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #556897;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+/* Blue-grey form card */
+.login-card {
+  background-color: #7C8BAA;
+  border-radius: 20px;
+  padding: 36px 40px 32px;
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+}
+
+/* Form layout */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Field row */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Black label */
+.login-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1C1C1E;
+  letter-spacing: 0.01em;
+}
+
+/* Light-grey input */
+.login-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1C1C1E;
+  background-color: #D8D8D8;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-input:focus {
+  border-color: #556897;
+  box-shadow: 0 0 0 2px rgba(85, 104, 151, 0.2);
+}
+
+.login-input::placeholder {
+  color: #8A8A8E;
+  opacity: 1;
+  font-size: 13px;
+}
+
+/* Inline error */
+.login-error {
+  color: #B00020;
+  font-size: 12.5px;
+  font-weight: 600;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* "Don't have an account? Sign up" note */
+.login-signup-note {
+  font-size: 12.5px;
+  color: #292929;
+  margin: 0;
+}
+
+.login-signup-link {
+  font-weight: 600;
+  color: #292929;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.18s ease;
+}
+
+.login-signup-link:hover {
+  color: #FFFFFF;
+}
+
+/* Link inside error message */
+.login-error-link {
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.18s ease;
+}
+
+.login-error-link:hover {
+  opacity: 0.75;
+}
+
+/* Footer row: continue button at lower-right */
+.login-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+/* Continue button — black default, white on hover */
+.login-continue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 32px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: 2px solid #000000;
+  background-color: #000000;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.login-continue-btn:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #000000;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .login-container {
+    padding: 28px 16px 48px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .login-heading {
+    font-size: 38px;
+  }
+
+  .login-card {
+    padding: 24px 20px 24px;
+    max-width: 100%;
+  }
+
+  .login-footer {
+    justify-content: stretch;
+  }
+
+  .login-continue-btn {
+    width: 100%;
+  }
+}
